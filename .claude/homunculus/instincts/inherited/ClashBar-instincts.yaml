@@ -1,0 +1,567 @@
+# Instincts generated from https://github.com/gclm/ClashBar
+# Generated: 2026-03-13T09:29:43.371Z
+# Version: 2.0
+
+---
+id: ClashBar-commit-conventional
+trigger: "when writing a commit message"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: https://github.com/gclm/ClashBar
+---
+
+# ClashBar Commit Conventional
+
+## Action
+
+Use conventional commit format with prefixes: feat, fix, refactor, docs, perf
+
+## Evidence
+
+- 82 commits analyzed
+- Detected conventional commit pattern
+- Examples: perf(status-item): render speed text as template image, feat(changelog): Updated v0.1.8 with new proxy group sorting toggle and status bar icon.
+
+---
+id: ClashBar-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/gclm/ClashBar
+---
+
+# ClashBar Commit Length
+
+## Action
+
+Keep commit messages concise (under 50 characters)
+
+## Evidence
+
+- Average commit message length: 49 chars
+- Based on 82 commits
+
+---
+id: ClashBar-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/gclm/ClashBar
+---
+
+# ClashBar Naming Files
+
+## Action
+
+Use PascalCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: PascalCase
+
+---
+id: ClashBar-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/gclm/ClashBar
+---
+
+# ClashBar Export Style
+
+## Action
+
+Prefer mixed exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: mixed
+
+---
+id: ClashBar-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/gclm/ClashBar
+---
+
+# ClashBar Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: ClashBar-workflow-feature-development
+trigger: "when implementing a new feature"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/gclm/ClashBar
+---
+
+# ClashBar Workflow Feature Development
+
+## Action
+
+Follow the feature-development workflow:
+1. Add feature implementation
+2. Add tests for feature
+3. Update documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~13x per month
+- Files: sources/clashbar/features/menubar/components/*, **/api/**
+
+---
+id: ClashBar-workflow-refactoring
+trigger: "when refactoring code"
+confidence: 0.75
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/gclm/ClashBar
+---
+
+# ClashBar Workflow Refactoring
+
+## Action
+
+Follow the refactoring workflow:
+1. Ensure tests pass before refactor
+2. Refactor code structure
+3. Verify tests still pass
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~5x per month
+- Files: src/**/*
+
+---
+id: ClashBar-workflow-documentation-update
+trigger: "when doing documentation update"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/gclm/ClashBar
+---
+
+# ClashBar Workflow Documentation Update
+
+## Action
+
+Follow the documentation-update workflow:
+1. Update README.md content
+2. Refresh screenshots/assets in imgs/ directory
+3. Update CHANGELOG.md with version info
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~8x per month
+- Files: README.md, CHANGELOG.md, imgs/*.png
+
+---
+id: ClashBar-workflow-localization-update
+trigger: "when doing localization update"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/gclm/ClashBar
+---
+
+# ClashBar Workflow Localization Update
+
+## Action
+
+Follow the localization-update workflow:
+1. Add strings to en.lproj/Localizable.strings
+2. Add corresponding strings to zh-Hans.lproj/Localizable.strings
+3. Update UI components to use new strings
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~12x per month
+- Files: Sources/ClashBar/Resources/Localization/en.lproj/Localizable.strings, Sources/ClashBar/Resources/Localization/zh-Hans.lproj/Localizable.strings
+
+---
+id: ClashBar-workflow-app-state-feature-extension
+trigger: "when doing app state feature extension"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/gclm/ClashBar
+---
+
+# ClashBar Workflow App State Feature Extension
+
+## Action
+
+Follow the app-state-feature-extension workflow:
+1. Create/update AppState+Feature.swift extension
+2. Update AppState.swift main file
+3. Update AppStateTypes.swift with new types
+4. Update related UI components
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~15x per month
+- Files: Sources/ClashBar/App/State/AppState+*.swift, Sources/ClashBar/App/State/AppState.swift, Sources/ClashBar/App/State/AppStateTypes.swift
+
+---
+id: ClashBar-workflow-menu-bar-ui-enhancement
+trigger: "when doing menu bar ui enhancement"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/gclm/ClashBar
+---
+
+# ClashBar Workflow Menu Bar Ui Enhancement
+
+## Action
+
+Follow the menu-bar-ui-enhancement workflow:
+1. Update MenuBarCommonViews.swift with shared components
+2. Modify specific tab views in Tabs/ directory
+3. Update MenuBarRoot.swift for layout changes
+4. Adjust layout tokens if needed
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~18x per month
+- Files: Sources/ClashBar/Features/MenuBar/Components/MenuBarCommonViews.swift, Sources/ClashBar/Features/MenuBar/Root/MenuBarRoot*.swift, Sources/ClashBar/Features/MenuBar/Tabs/*.swift
+
+---
+id: ClashBar-workflow-status-item-refinement
+trigger: "when doing status item refinement"
+confidence: 0.8
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/gclm/ClashBar
+---
+
+# ClashBar Workflow Status Item Refinement
+
+## Action
+
+Follow the status-item-refinement workflow:
+1. Update StatusItemContentView.swift for visual changes
+2. Modify StatusItemController.swift for behavior changes
+3. Test appearance in different macOS themes
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~6x per month
+- Files: Sources/ClashBar/App/StatusItem/StatusItemContentView.swift, Sources/ClashBar/App/StatusItem/StatusItemController.swift
+
+---
+id: ClashBar-workflow-brand-asset-update
+trigger: "when doing brand asset update"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/gclm/ClashBar
+---
+
+# ClashBar Workflow Brand Asset Update
+
+## Action
+
+Follow the brand-asset-update workflow:
+1. Update icon files in Resources/Brand/
+2. Update Package.swift references
+3. Update preprocess script if needed
+4. Update BrandIcon.swift component
+5. Refresh README screenshots
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: Sources/ClashBar/Resources/Brand/*.png, Package.swift, Scripts/preprocess.sh
+
+---
+id: ClashBar-workflow-system-tab-feature-addition
+trigger: "when doing system tab feature addition"
+confidence: 0.75
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/gclm/ClashBar
+---
+
+# ClashBar Workflow System Tab Feature Addition
+
+## Action
+
+Follow the system-tab-feature-addition workflow:
+1. Update SystemTabView.swift with new UI
+2. Update SystemTabView+Rows.swift for new setting rows
+3. Add corresponding AppState extensions
+4. Update localization strings
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~5x per month
+- Files: Sources/ClashBar/Features/MenuBar/Tabs/System/SystemTabView.swift, Sources/ClashBar/Features/MenuBar/Tabs/System/SystemTabView+Rows.swift, Sources/ClashBar/App/State/AppState+*.swift
+
+---
+id: clashbar-swift-naming
+trigger: "When creating new Swift files or classes"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: gclm/ClashBar
+---
+
+# Clashbar Swift Naming
+
+## Action
+
+Use PascalCase for files and classes, camelCase for functions
+
+## Evidence
+
+- Files like MenuBarCommonViews.swift, StatusItemController.swift
+- Pattern across all Swift source files
+
+---
+id: clashbar-conventional-commits
+trigger: "When making a commit"
+confidence: 0.95
+domain: git
+source: repo-analysis
+source_repo: gclm/ClashBar
+---
+
+# Clashbar Conventional Commits
+
+## Action
+
+Use conventional commit format with prefixes: feat, fix, refactor, docs, perf, chore
+
+## Evidence
+
+- perf(status-item): render speed text as template image
+- feat(changelog): Updated v0.1.8 with new proxy group sorting toggle
+- All commits follow this pattern
+
+---
+id: clashbar-commit-length
+trigger: "When writing commit messages"
+confidence: 0.8
+domain: git
+source: repo-analysis
+source_repo: gclm/ClashBar
+---
+
+# Clashbar Commit Length
+
+## Action
+
+Keep commit messages around 49 characters average length
+
+## Evidence
+
+- Average commit length is 49 characters
+- Examples show concise, descriptive messages
+
+---
+id: clashbar-appstate-extension
+trigger: "When adding new app functionality"
+confidence: 0.88
+domain: architecture
+source: repo-analysis
+source_repo: gclm/ClashBar
+---
+
+# Clashbar Appstate Extension
+
+## Action
+
+Create AppState+Feature.swift extensions rather than modifying main AppState.swift
+
+## Evidence
+
+- Files like AppState+ConfigMonitoring.swift, AppState+Polling.swift
+- 15x/month frequency pattern
+
+---
+id: clashbar-menubar-components
+trigger: "When enhancing menu bar UI"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: gclm/ClashBar
+---
+
+# Clashbar Menubar Components
+
+## Action
+
+Update MenuBarCommonViews.swift for shared components first, then specific tab views
+
+## Evidence
+
+- MenuBarCommonViews.swift appears in most UI changes
+- 18x/month frequency, highest workflow activity
+
+---
+id: clashbar-bilingual-localization
+trigger: "When adding new UI text"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: gclm/ClashBar
+---
+
+# Clashbar Bilingual Localization
+
+## Action
+
+Add strings to both en.lproj/Localizable.strings and zh-Hans.lproj/Localizable.strings
+
+## Evidence
+
+- Both localization files exist
+- 12x/month frequency pattern shows consistent bilingual support
+
+---
+id: clashbar-status-item-templates
+trigger: "When modifying status bar appearance"
+confidence: 0.87
+domain: workflow
+source: repo-analysis
+source_repo: gclm/ClashBar
+---
+
+# Clashbar Status Item Templates
+
+## Action
+
+Update StatusItemContentView.swift for visuals, StatusItemController.swift for behavior
+
+## Evidence
+
+- perf(status-item): render speed text as template image
+- Clear separation between view and controller
+
+---
+id: clashbar-brand-asset-sync
+trigger: "When updating app icons or branding"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: gclm/ClashBar
+---
+
+# Clashbar Brand Asset Sync
+
+## Action
+
+Update Resources/Brand/ files, Package.swift references, and BrandIcon.swift component together
+
+## Evidence
+
+- feat(icons): update brand icons and add running/sleeping states
+- Brand asset workflow touches all these files
+
+---
+id: clashbar-system-tab-rows
+trigger: "When adding system settings"
+confidence: 0.83
+domain: workflow
+source: repo-analysis
+source_repo: gclm/ClashBar
+---
+
+# Clashbar System Tab Rows
+
+## Action
+
+Update SystemTabView+Rows.swift for new setting rows alongside main SystemTabView.swift
+
+## Evidence
+
+- SystemTabView+Rows.swift exists as separate extension
+- System tab workflow pattern shows this separation
+
+---
+id: clashbar-refactor-with-tests
+trigger: "When refactoring code"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: gclm/ClashBar
+---
+
+# Clashbar Refactor With Tests
+
+## Action
+
+Ensure tests pass before refactor, then verify tests still pass after
+
+## Evidence
+
+- refactor(app): simplify Swift syntax in state and model code
+- Refactoring workflow mentions test verification
+
+---
+id: clashbar-sources-structure
+trigger: "When creating new Swift files"
+confidence: 0.9
+domain: architecture
+source: repo-analysis
+source_repo: gclm/ClashBar
+---
+
+# Clashbar Sources Structure
+
+## Action
+
+Place files under Sources/ClashBar/ with feature-based organization (App/, Features/, Domain/, UI/)
+
+## Evidence
+
+- All Swift files follow Sources/ClashBar/Feature/Component pattern
+- Clear separation of App, Features, Domain, UI
+
+---
+id: clashbar-changelog-with-features
+trigger: "When updating documentation"
+confidence: 0.8
+domain: workflow
+source: repo-analysis
+source_repo: gclm/ClashBar
+---
+
+# Clashbar Changelog With Features
+
+## Action
+
+Update CHANGELOG.md with version info when adding new features
+
+## Evidence
+
+- feat(changelog): Updated v0.1.8 with new proxy group sorting toggle
+- Documentation workflow includes changelog updates
+
