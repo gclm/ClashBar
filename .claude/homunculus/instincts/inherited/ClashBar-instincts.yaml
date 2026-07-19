@@ -1,0 +1,649 @@
+# Instincts generated from https://github.com/gclm/ClashBar
+# Generated: 2026-07-19T15:29:15.351Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: ClashBar-commit-conventional
+trigger: "when writing a commit message"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: https://github.com/gclm/ClashBar
+---
+
+# ClashBar Commit Conventional
+
+## Action
+
+Use conventional commit format with prefixes: fix, feat, refactor, docs, chore
+
+## Evidence
+
+- 100 commits analyzed
+- Detected conventional commit pattern
+- Examples: feat(proxy): support remote icons for proxy groups, style(menu-bar): use shared app font helpers
+
+---
+id: ClashBar-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/gclm/ClashBar
+---
+
+# ClashBar Commit Length
+
+## Action
+
+Keep commit messages concise (~48 characters)
+
+## Evidence
+
+- Average commit message length: 48 chars
+- Based on 100 commits
+
+---
+id: ClashBar-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/gclm/ClashBar
+---
+
+# ClashBar Naming Files
+
+## Action
+
+Use PascalCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: PascalCase
+
+---
+id: ClashBar-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/gclm/ClashBar
+---
+
+# ClashBar Export Style
+
+## Action
+
+Prefer mixed exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: mixed
+
+---
+id: ClashBar-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/gclm/ClashBar
+---
+
+# ClashBar Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: ClashBar-workflow-feature-development
+trigger: "when implementing a new feature"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/gclm/ClashBar
+---
+
+# ClashBar Workflow Feature Development
+
+## Action
+
+Follow the feature-development workflow:
+1. Add feature implementation
+2. Add tests for feature
+3. Update documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~15x per month
+- Files: sources/clashbar/features/menubar/components/*
+
+---
+id: ClashBar-workflow-refactoring
+trigger: "when refactoring code"
+confidence: 0.75
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/gclm/ClashBar
+---
+
+# ClashBar Workflow Refactoring
+
+## Action
+
+Follow the refactoring workflow:
+1. Ensure tests pass before refactor
+2. Refactor code structure
+3. Verify tests still pass
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~5x per month
+- Files: src/**/*
+
+---
+id: ClashBar-workflow-feature-or-refactor-menu-bar-tabs
+trigger: "when doing feature or refactor menu bar tabs"
+confidence: 0.8
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/gclm/ClashBar
+---
+
+# ClashBar Workflow Feature Or Refactor Menu Bar Tabs
+
+## Action
+
+Follow the feature-or-refactor-menu-bar-tabs workflow:
+1. Edit or add files in Sources/ClashBar/Features/MenuBar/Tabs/* (such as ActivityTabView.swift, ProxyProvidersAndGroupsView.swift, SystemTabView.swift, etc.)
+2. Update shared menu bar components in Sources/ClashBar/Features/MenuBar/Components/* or layout helpers in Sources/ClashBar/Features/MenuBar/Layout/*
+3. Optionally update related state in Sources/ClashBar/App/State/AppState+*.swift
+4. Optionally update localization files if UI text is changed
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~6x per month
+- Files: Sources/ClashBar/Features/MenuBar/Tabs/*.swift, Sources/ClashBar/Features/MenuBar/Components/*.swift, Sources/ClashBar/Features/MenuBar/Layout/*.swift
+
+---
+id: ClashBar-workflow-update-localization
+trigger: "when doing update localization"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/gclm/ClashBar
+---
+
+# ClashBar Workflow Update Localization
+
+## Action
+
+Follow the update-localization workflow:
+1. Edit or add features/components that introduce new user-facing text
+2. Update Sources/ClashBar/Resources/Localization/en.lproj/Localizable.strings
+3. Update Sources/ClashBar/Resources/Localization/zh-Hans.lproj/Localizable.strings
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: Sources/ClashBar/Resources/Localization/en.lproj/Localizable.strings, Sources/ClashBar/Resources/Localization/zh-Hans.lproj/Localizable.strings
+
+---
+id: ClashBar-workflow-feature-or-refactor-app-state
+trigger: "when doing feature or refactor app state"
+confidence: 0.75
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/gclm/ClashBar
+---
+
+# ClashBar Workflow Feature Or Refactor App State
+
+## Action
+
+Follow the feature-or-refactor-app-state workflow:
+1. Edit or add files in Sources/ClashBar/App/State/AppState+*.swift
+2. Optionally update Sources/ClashBar/App/State/AppState.swift and Sources/ClashBar/App/State/AppStateTypes.swift
+3. Optionally update related model files in Sources/ClashBar/Domain/Models/*
+4. Optionally update menu bar components if UI is affected
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~5x per month
+- Files: Sources/ClashBar/App/State/AppState+*.swift, Sources/ClashBar/App/State/AppState.swift, Sources/ClashBar/App/State/AppStateTypes.swift
+
+---
+id: ClashBar-workflow-ci-workflow-update
+trigger: "when doing ci workflow update"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/gclm/ClashBar
+---
+
+# ClashBar Workflow Ci Workflow Update
+
+## Action
+
+Follow the ci-workflow-update workflow:
+1. Edit or add .github/workflows/build.yml or other workflow files
+2. Optionally update related scripts or documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: .github/workflows/build.yml
+
+---
+id: ClashBar-workflow-documentation-readme-update
+trigger: "when doing documentation readme update"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/gclm/ClashBar
+---
+
+# ClashBar Workflow Documentation Readme Update
+
+## Action
+
+Follow the documentation-readme-update workflow:
+1. Edit README.md
+2. Optionally update LICENSE if legal info changes
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: README.md, LICENSE
+
+---
+id: ClashBar-workflow-merge-dev-to-main
+trigger: "when doing merge dev to main"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/gclm/ClashBar
+---
+
+# ClashBar Workflow Merge Dev To Main
+
+## Action
+
+Follow the merge-dev-to-main workflow:
+1. Merge dev branch into main
+2. All files touched in previous feature/fix commits are included
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: various (aggregated from prior PRs)
+
+---
+id: clashbar-instinct-file-naming
+trigger: "When creating or renaming a Swift source file"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: gclm/ClashBar
+---
+
+# Clashbar Instinct File Naming
+
+## Action
+
+Use PascalCase for file names (e.g., ProxyProvidersAndGroupsView.swift)
+
+## Evidence
+
+- Pattern in Sources/ClashBar/Features/MenuBar/Tabs/ProxyProvidersAndGroupsView.swift
+- Pattern in Sources/ClashBar/App/State/AppState+Polling.swift
+
+---
+id: clashbar-instinct-function-naming
+trigger: "When defining a function in Swift"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: gclm/ClashBar
+---
+
+# Clashbar Instinct Function Naming
+
+## Action
+
+Use camelCase for function names
+
+## Evidence
+
+- Pattern in Swift codebase (noted in codeStyle.namingConventions.functions)
+
+---
+id: clashbar-instinct-class-naming
+trigger: "When defining a class in Swift"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: gclm/ClashBar
+---
+
+# Clashbar Instinct Class Naming
+
+## Action
+
+Use PascalCase for class names
+
+## Evidence
+
+- Pattern in Swift codebase (noted in codeStyle.namingConventions.classes)
+
+---
+id: clashbar-instinct-constant-naming
+trigger: "When defining a constant in Swift"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: gclm/ClashBar
+---
+
+# Clashbar Instinct Constant Naming
+
+## Action
+
+Use SCREAMING_SNAKE_CASE for constant names
+
+## Evidence
+
+- Pattern in Swift codebase (noted in codeStyle.namingConventions.constants)
+
+---
+id: clashbar-instinct-import-style
+trigger: "When importing modules in Swift files"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: gclm/ClashBar
+---
+
+# Clashbar Instinct Import Style
+
+## Action
+
+Use absolute import paths
+
+## Evidence
+
+- Pattern in codeStyle.importStyle: absolute
+
+---
+id: clashbar-instinct-export-style
+trigger: "When exporting modules or symbols"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: gclm/ClashBar
+---
+
+# Clashbar Instinct Export Style
+
+## Action
+
+Use mixed export style as appropriate for context
+
+## Evidence
+
+- Pattern in codeStyle.exportStyle: mixed
+
+---
+id: clashbar-instinct-git-commit-format
+trigger: "When writing a commit message"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: gclm/ClashBar
+---
+
+# Clashbar Instinct Git Commit Format
+
+## Action
+
+Use Conventional Commits format: <type>(<scope>): <description>
+
+## Evidence
+
+- feat(proxy): support remote icons for proxy groups
+- fix(core): validate config before launch
+- refactor(app): simplify Swift syntax in state and model code
+
+---
+id: clashbar-instinct-commit-length
+trigger: "When writing a commit message"
+confidence: 0.7
+domain: git
+source: repo-analysis
+source_repo: gclm/ClashBar
+---
+
+# Clashbar Instinct Commit Length
+
+## Action
+
+Keep commit messages concise, around 48 characters on average
+
+## Evidence
+
+- commits.averageLength: 48
+
+---
+id: clashbar-instinct-feature-menu-bar-tabs
+trigger: "When adding, improving, or refactoring menu bar tab features or layout"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: gclm/ClashBar
+---
+
+# Clashbar Instinct Feature Menu Bar Tabs
+
+## Action
+
+Edit/add files in Sources/ClashBar/Features/MenuBar/Tabs/*, update shared components/layout, optionally update app state and localization files
+
+## Evidence
+
+- Workflow: feature-or-refactor-menu-bar-tabs
+- Files: Sources/ClashBar/Features/MenuBar/Tabs/*.swift, .../Components/*.swift, .../Layout/*.swift, AppState+*.swift, Localization/*.strings
+
+---
+id: clashbar-instinct-update-localization
+trigger: "When new UI text is added or user-facing strings are changed"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: gclm/ClashBar
+---
+
+# Clashbar Instinct Update Localization
+
+## Action
+
+Update Sources/ClashBar/Resources/Localization/en.lproj/Localizable.strings and zh-Hans.lproj/Localizable.strings
+
+## Evidence
+
+- Workflow: update-localization
+- Files: Sources/ClashBar/Resources/Localization/en.lproj/Localizable.strings, zh-Hans.lproj/Localizable.strings
+
+---
+id: clashbar-instinct-feature-app-state
+trigger: "When adding or modifying app state management, polling, config, or settings logic"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: gclm/ClashBar
+---
+
+# Clashbar Instinct Feature App State
+
+## Action
+
+Edit/add files in Sources/ClashBar/App/State/AppState+*.swift, optionally update AppState.swift, AppStateTypes.swift, related models, and menu bar components if UI is affected
+
+## Evidence
+
+- Workflow: feature-or-refactor-app-state
+- Files: Sources/ClashBar/App/State/AppState+*.swift, AppState.swift, AppStateTypes.swift, Domain/Models/*.swift
+
+---
+id: clashbar-instinct-ci-update
+trigger: "When adding or changing CI/CD checks"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: gclm/ClashBar
+---
+
+# Clashbar Instinct Ci Update
+
+## Action
+
+Edit/add .github/workflows/build.yml or other workflow files, optionally update related scripts or documentation
+
+## Evidence
+
+- Workflow: ci-workflow-update
+- Files: .github/workflows/build.yml
+
+---
+id: clashbar-instinct-readme-update
+trigger: "When updating project documentation or legal information"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: gclm/ClashBar
+---
+
+# Clashbar Instinct Readme Update
+
+## Action
+
+Edit README.md, optionally update LICENSE if legal info changes
+
+## Evidence
+
+- Workflow: documentation-readme-update
+- Files: README.md, LICENSE
+
+---
+id: clashbar-instinct-merge-dev
+trigger: "When releasing a batch of features/fixes from dev to main"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: gclm/ClashBar
+---
+
+# Clashbar Instinct Merge Dev
+
+## Action
+
+Merge dev branch into main, including all files touched in previous feature/fix commits
+
+## Evidence
+
+- Workflow: merge-dev-to-main
+- Commits: Merge pull request #5 from Sitoi/dev
+
+---
+id: clashbar-instinct-test-location
+trigger: "When adding or updating tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: gclm/ClashBar
+---
+
+# Clashbar Instinct Test Location
+
+## Action
+
+Place tests in a separate directory from source code
+
+## Evidence
+
+- architecture.folderStructure.testLocation: separate
+
+---
+id: clashbar-instinct-test-after-feature
+trigger: "When implementing a new feature"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: gclm/ClashBar
+---
+
+# Clashbar Instinct Test After Feature
+
+## Action
+
+Add tests for the feature immediately after implementation
+
+## Evidence
+
+- feature-development workflow: commitSequence includes 'Add tests for feature' after 'Add feature implementation'
+
+---
+id: clashbar-instinct-test-before-refactor
+trigger: "When planning to refactor code"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: gclm/ClashBar
+---
+
+# Clashbar Instinct Test Before Refactor
+
+## Action
+
+Ensure all tests pass before starting the refactor
+
+## Evidence
+
+- refactoring workflow: commitSequence starts with 'Ensure tests pass before refactor'
+
+---
+id: clashbar-instinct-test-after-refactor
+trigger: "After refactoring code"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: gclm/ClashBar
+---
+
+# Clashbar Instinct Test After Refactor
+
+## Action
+
+Verify all tests still pass
+
+## Evidence
+
+- refactoring workflow: commitSequence ends with 'Verify tests still pass'
+
